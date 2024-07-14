@@ -4,18 +4,18 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<your-region>.amazonaws.com
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 767398137554.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t my-docker-app .
-      - docker tag my-docker-app:latest <aws_account_id>.dkr.ecr.<your-region>.amazonaws.com/my-docker-app:latest
+      - docker tag my-docker-app:latest 767398137554.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push <aws_account_id>.dkr.ecr.<your-region>.amazonaws.com/my-docker-app:latest
+      - docker push 767398137554.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
 
 artifacts:
   files:
