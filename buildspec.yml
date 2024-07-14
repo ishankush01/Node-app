@@ -21,3 +21,8 @@ artifacts:
   files:
     - '**/*'
   discard-paths: yes
+  secondary-artifacts:
+    imagedefinitions:
+      files:
+        - imagedefinitions.json
+      name: imagedefinitions
