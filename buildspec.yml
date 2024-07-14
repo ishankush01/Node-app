@@ -16,6 +16,9 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 767398137554.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"my-docker-app","imageUri":"767398137554.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest"}]' > imagedefinitions.json
+      - cat imagedefinitions.json  # Verify the contents of the file
 
 artifacts:
   files:
